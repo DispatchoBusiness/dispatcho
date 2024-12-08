@@ -8,5 +8,11 @@ First, run the development server:
 npm run dev
 ```
 
+## If you are missing node_modules
+run the command
+```
+npm install
+```
+
 ## Deployed
 - on vercel
