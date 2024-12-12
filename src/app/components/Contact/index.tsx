@@ -29,7 +29,6 @@ const Contact = ({ email, phone }: ContactProps) => {
         const { email, phone } = contact;
         return (
             <div>
-                <h1>Contact Information</h1>
                 <p><strong>Email:</strong> {email}</p>
                 <p><strong>Phone:</strong> {phone}</p>
             </div>
