@@ -1,6 +1,6 @@
 "use client";
 
-import useTestimonialData from "@/app/database/components/useTestimonialData";
+import useTestimonialData from "../../database/components/useTestimonialData";
 import React from "react";
 
 // Define types for the props

@@ -1,6 +1,6 @@
 "use client";
 
-import useNewsLetterData from "@/app/database/components/useNewsLetterData";
+import useNewsLetterData from "../../database/components/useNewsLetterData";
 import React from "react";
 
 // The Contact component receives props and renders them

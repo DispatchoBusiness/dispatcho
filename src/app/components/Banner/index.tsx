@@ -1,16 +1,9 @@
-import React from "react";
+import Header from "../Header";
 
-// The Contact component receives props and renders them
 export default function Banner() {
-    return <div>
-        <div>Image area</div>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Pricing</li>
-            <li>Login</li>
-        </ul>
-        <h1>See Pricing Options</h1>
-        <button>Text</button>
-    </div>
-};
+    return <>
+        <Header />
+        <h1 className="text-4xl font-bold mt-6">See Pricing Options</h1>
+        <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Text</button>
+    </>
+}
