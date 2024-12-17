@@ -1,19 +1,9 @@
-"use client";
+import Header from "../Header";
 
-import { Link } from 'react-router-dom';
-import React from "react";
-
-// The Contact component receives props and renders them
 export default function Banner() {
-    return <div>
-        <div>Image area</div>
-        <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li>Pricing</li>
-            <li>Login</li>
-        </ul>
-        <h1>See Pricing Options</h1>
-        <button>Text</button>
-    </div>
-};
+    return <>
+        <Header />
+        <h1 className="text-4xl font-bold mt-6">See Pricing Options</h1>
+        <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Text</button>
+    </>
+}

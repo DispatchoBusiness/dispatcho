@@ -8,18 +8,13 @@ import Home from "./pages/Home";
 import About from './pages/About';
 import Pricing from './pages/Pricing';
 import Login from './pages/Login';
+import Page from "./page";
 
-export default function Page() {
+export default function App() {
     return (
         <>
             <Router>
-                {/* <Navbar /> */}
-                <Routes>
-                    <Route path="*" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/pricing" element={<Pricing />} />
-                    <Route path="/login" element={<Login />} />
-                </Routes>
+                <Page />
             </Router>
         </>
     );

@@ -16,3 +16,6 @@ npm install
 
 ## Deployed
 - on vercel
+
+## installed 
+npm install react-icons --save
