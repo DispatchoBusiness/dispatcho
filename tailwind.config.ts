@@ -11,6 +11,17 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        postFooter: "var(--postFooter)",
+        footerText: "var(--postFooterText)",
+        preHeader: "var(--preHeader)",
+        preHeaderText: "var(--preHeaderText)",
+      },
+      fontSize: {
+        'sm': '14px',
+        'base': '16px',
+        'lg': '18px',
+        'xl': '24px',
+        '2xl': '32px',
       },
     },
   },

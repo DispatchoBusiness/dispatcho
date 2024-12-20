@@ -29,10 +29,16 @@ const Testimonial = ({ image_link, message }: TestimonialDataProps) => {
   if (testimonial) {
     const { image_link, message } = testimonial;
     return (
-      <div className="flex flex-col gap-4 p-4 bg-gray-100 dark:bg-gray-900" >
-        <img src={image_link} alt="" />
-        <div>{message}</div>
+      <div className="w-full">
+        <div className="flex gap-4 bg-orange-500 justify-center pt-8 pb-8">
+          <div className="flex flex-col gap-4 p-4 bg-gray-100 dark:bg-gray-900" >
+            <img src={image_link} alt="" />
+            <div>{message}</div>
+          </div>
+        </div>
       </div>
+
+
     );
   }
 
