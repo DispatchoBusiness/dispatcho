@@ -1,5 +1,5 @@
 "use client";
-
+import Uppercase from '../../utils/uppercase';
 import useContactData from '../../database/components/useContactData';
 import React from "react";
 
@@ -28,15 +28,15 @@ const Contact = ({ email, phone }: ContactProps) => {
     if (contact) {
         const { email, phone } = contact;
         return (
-            <div className="flex justify-center items-center p-4 bg-blue-500 text-white">
+            <div className="flex justify-center items-center p-4">
                 <div className="flex space-x-12"> {/* Vertical space between fields */}
-                    <div className="flex flex-col items-center">
-                        <p className="text-lg font-semibold">Email</p>
+                    <div className="flex flex-col items-center border-r-2 border-white pr-12">
+                        <p className="text-lg font-semibold">{Uppercase("Email")}</p>
                         <p className="text-lg">{email}</p>
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <p className="text-lg font-semibold">Phone</p>
+                        <p className="text-lg font-semibold">{Uppercase("Phone")}</p>
                         <p className="text-lg">{phone}</p>
                     </div>
                 </div>

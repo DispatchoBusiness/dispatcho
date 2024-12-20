@@ -2,15 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --scrollbarBackground: #363636;
+  --scrollbar: #141414;
+  --preHeader: #141414;
+  --preHeaderText: #ffffff;
+  --footer: #232323;
+  --postFooter: #141414;
+  --foreground: #141414;
+  --footerText: #ffffff;
+  --postFooterText: #ffffff;
+  --font-size-base: 16px;
+  /* Base font size */
+  --font-size-sm: 14px;
+  /* Small font size */
+  --font-size-lg: 18px;
+  /* Large font size */
+  --font-size-xl: 24px;
+}
+
+/* Styling the scrollbar background */
+::-webkit-scrollbar {
+  width: 15px;
+  /* Adjust width of the scrollbar */
+  height: 8px;
+  /* For horizontal scrollbar, adjust height */
+}
+
+/* Styling the scrollbar track (the background) */
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBackground);
+  /* Black background for the scrollbar track */
+  border-radius: 0px;
+  /* Optional: Rounded corners for track */
+}
+
+/* Styling the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  /* Black color for the thumb */
+  border-radius: 10px;
+  /* Optional: Rounded corners for thumb */
+  border: 2px solid var(--scrollbarBackground);
+  ;
+  /* Optional: Add border to the thumb for a better look */
+}
+
+/* Optional: Styling the scrollbar when hovered */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbarBackground);
+  /* Darker shade when hovered */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #141414;
     --foreground: #ededed;
+    --postFooter: #141414;
   }
 }
 
@@ -18,4 +68,38 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-base);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  font-size: var(--font-size-base);
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+footer {
+  background-color: var(--footer);
+  color: var(--foreground);
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--foreground);
+  /* Ensure links in footer are readable */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
