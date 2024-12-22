@@ -13,8 +13,8 @@ export default function Home() {
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 
                 <div className="w-full">
-                    <div className="flex gap-4 justify-center pt-8 pb-8">
-                        <h2>Home PAge</h2>
+                    <div className="flex gap-4 justify-center pt-12 pb-8">
+                        <h2>Home</h2>
                     </div>
                     <div className="px-40 pt-8 pb-8">
                         <div className="flex items-center">

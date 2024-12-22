@@ -33,10 +33,10 @@ const PreBanner = ({ message }: PreBannerProps) => {
       <div className="flex justify-between items-center gap-4 p-4 bg-gray-100 dark:bg-gray-900" style={{ backgroundColor: 'var(--preHeader)', color: 'var(--preHeaderText)' }}>
         <div className="flex-1">{message}</div>
         <ul className="flex gap-4">
-          <li><FaLinkedin /></li>
-          <li><FaFacebookSquare /></li>
-          <li><FaTwitterSquare /></li>
-          <li><FaInstagramSquare /></li>
+          <li className="cursor-pointer"><FaLinkedin /></li>
+          <li className="cursor-pointer"><FaFacebookSquare /></li>
+          <li className="cursor-pointer"><FaTwitterSquare /></li>
+          <li className="cursor-pointer"><FaInstagramSquare /></li>
         </ul>
       </div>
     );
