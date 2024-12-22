@@ -8,6 +8,9 @@ First, run the development server:
 npm run dev
 ```
 
+## database
+- supabase
+
 ## If you are missing node_modules
 run the command
 ```

@@ -3,41 +3,43 @@
 import { useEffect, useState } from "react";
 import { supabase } from '../index';
 
-type Testimonial = {
+type Pricing = {
     id: number;
-    img_url: string;
-    message: string;
+    title: string;
+    description: string;
+    price: number;
     created_at: Date;
 };
 
-export default function useTestimonialData() {
-    const [testimonial, setTestimonial] = useState<Testimonial | null>(null);
+export default function usePricingData() {
+    const [data, setData] = useState<Pricing[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        getTestimonial();
+        getPreBanner();
     }, []);
 
-    async function getTestimonial() {
+    async function getPreBanner() {
         setLoading(true); // Set loading to true when fetching data
-        const { data, error } = await supabase.from("testimonials").select();
+        const { data, error } = await supabase.from("pricing").select();
 
         if (error) {
-            setError('Error fetching testimonial data: ' + error.message); // Set the error state
+            setError('Error fetching pricing data: ' + error.message); // Set the error state
             setLoading(false); // Set loading to false after error
             return;
         }
 
         // Check if data is valid
         if (data && data.length > 0) {
-            setTestimonial({ id: data[0].id, img_url: data[0].img_url, message: data[0].message, created_at: data[0].date });
+            const createdAt = new Date(data[0].created_at);
+            setData([data[0], data[1], data[2]]);
         } else {
-            setError('No testimonial data found');
+            setError('No pricing data found');
         }
 
         setLoading(false); // Set loading to false after data is fetched
     }
 
-    return { testimonial, loading, error };
+    return { data, loading, error };
 }

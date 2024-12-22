@@ -8,12 +8,12 @@ export default function NewsLetter() {
     const { email, loading, error, success, handleEmailChange, handleSubmit } = useNewsLetterData();
 
     return (
-        <div className="w-full bg-red-500">
+        <div className="w-full">
             <div className="px-40 py-8">
-                <div className="flex gap-4 bg-yellow-500 py-8 px-8">
-                    <div>
+                <div className="flex gap-4 py-8 px-8 custom-dashed-border">
+                    <div className="w-full">
                         <h2>Subscribe to our Newsletter</h2>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="flex items-center gap-4">
                             <input
                                 type="email"
                                 placeholder="Enter your email"

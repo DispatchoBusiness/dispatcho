@@ -28,7 +28,7 @@ const Contact = ({ email, phone }: ContactProps) => {
     if (contact) {
         const { email, phone } = contact;
         return (
-            <div className="flex justify-center items-center p-4">
+            <div className="flex justify-center items-center p-8">
                 <div className="flex space-x-12"> {/* Vertical space between fields */}
                     <div className="flex flex-col items-center border-r-2 border-white pr-12">
                         <p className="text-lg font-semibold">{Uppercase("Email")}</p>

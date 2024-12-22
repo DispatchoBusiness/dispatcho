@@ -15,6 +15,11 @@
   --footerText: #ffffff;
   --postFooterText: #ffffff;
   --font-size-base: 16px;
+  --dark-green: rgb(9, 65, 9);
+  --dark-green-transparent-50: rgba(0, 128, 0, 0.5);
+  --dark-green-transparent-25: rgba(0, 128, 0, 0.25);
+  --green: rgb(66, 175, 66);
+  --light-green: rgb(225, 252, 225);
   /* Base font size */
   --font-size-sm: 14px;
   /* Small font size */
@@ -77,6 +82,8 @@ h1 {
 
 h2 {
   font-size: var(--font-size-lg);
+  padding-bottom: 20px;
+  font-weight: 800;
 }
 
 p {
@@ -85,6 +92,39 @@ p {
 
 small {
   font-size: var(--font-size-sm);
+}
+
+form {
+  width: 100%;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--green);
+}
+
+input {
+  background-color: var(--light-green);
+  color: var(--foreground);
+  border-bottom: 2px solid var(--dark-green);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border: 2px solid var(--green);
+  outline: none;
+}
+
+.custom-dashed-border {
+  width: 100%;
+  height: 175px;
+  border: 5px solid var(--dark-green-transparent-25);
+  border-style: dashed;
+  border-radius: 15px;
 }
 
 footer {
