@@ -18,7 +18,7 @@ export default function Home() {
                     </div>
                     <div className="px-40 pt-8 pb-8">
                         <div className="flex items-center">
-                            <div className="mr-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, diam nec maximus suscipit, urna diam tempus dolor, in facilisis libero lorem non lorem. Ut facilisis lobortis commodo. Aliquam sodales sapien a neque dignissim tincidunt. </div>
+                            <div className="mr-12">Lorem hello ipsum possum dolor sit amet, consectetur adipiscing elit. Integer laoreet, diam nec maximus suscipit, urna diam tempus dolor, in facilisis libero lorem non lorem. Ut facilisis lobortis commodo. Aliquam sodales sapien a neque dignissim tincidunt. </div>
                             <button className="ml-8">text</button>
                         </div>
                     </div>
