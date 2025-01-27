@@ -18,7 +18,7 @@ export default function Home() {
                     </div>
                     <div className="px-40 pt-8 pb-8">
                         <div className="flex items-center">
-                            <div className="mr-12">Negocito is an innovative software solution designed to streamline small business operations. Our platform offers comprehensive tools for inventory monitoring, delivery optimization, and operation coordination, empowering small businesses to enhance efficiency, reduce costs, and improve customer satisfaction. </div>
+                            <div className="mr-12">Dispatcho is an innovative software solution designed to streamline small business operations. Our platform offers comprehensive tools for inventory monitoring, delivery optimization, and operation coordination, empowering small businesses to enhance efficiency, reduce costs, and improve customer satisfaction. </div>
                             <button className="ml-8">text</button>
                         </div>
                     </div>
