@@ -23,7 +23,7 @@
   /* Base font size */
   --font-size-sm: 14px;
   /* Small font size */
-  --font-size-lg: 18px;
+  --font-size-lg: 20px;
   /* Large font size */
   --font-size-xl: 24px;
 }
@@ -83,6 +83,7 @@ h1 {
 h2 {
   font-size: var(--font-size-lg);
   padding-bottom: 20px;
+  color: var(--green);
   font-weight: 800;
 }
 

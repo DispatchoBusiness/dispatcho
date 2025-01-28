@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,js,jsx,ts,tsx}", // Make sure Tailwind scans your React files
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'mobile': '450px', // Custom mobile breakpoint
+      },
+    },
   },
   plugins: [],
 }
