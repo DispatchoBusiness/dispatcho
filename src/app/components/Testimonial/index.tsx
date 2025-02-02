@@ -20,6 +20,19 @@ const Testimonial = () => {
     }
   }, [testimonial]);
 
+  // Auto scroll testimonials
+  useEffect(() => {
+    if (testimonial && Array.isArray(testimonial)) {
+      const interval = setInterval(() => {
+        setIndex((prevIndex) => 
+          prevIndex === testimonial.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 5000); // Change testimonial every 5 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [testimonial]);
+
   // Handle loading state
   if (loading) {
     return <div>Loading...</div>;
