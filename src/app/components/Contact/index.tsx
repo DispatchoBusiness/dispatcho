@@ -30,7 +30,7 @@ const Contact = ({ email, phone }: ContactProps) => {
         return (
             <div className="flex justify-center items-center p-8">
                 <div className="flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0">
-                    <div className="flex flex-col items-center border-r-2 border-white">
+                    <div className="flex flex-col items-center border-white">
                         <p className="text-m font-semibold">{Uppercase("Email")}</p>
                         <p className="text-m">{email}</p>
                     </div>
