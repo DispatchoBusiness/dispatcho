@@ -11,7 +11,7 @@ type Testimonial = {
 };
 
 export default function useTestimonialData() {
-    const [testimonial, setTestimonial] = useState<Testimonial | null>(null);
+    const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -21,7 +21,7 @@ export default function useTestimonialData() {
 
     async function getTestimonial() {
         setLoading(true); // Set loading to true when fetching data
-        const { data, error } = await supabase.from("testimonials").select();
+        const { data, error } = await supabase.from("testimonials").select("*").order("created_at", { ascending: false }); // Fetch all testimonials
 
         if (error) {
             setError('Error fetching testimonial data: ' + error.message); // Set the error state
@@ -31,13 +31,13 @@ export default function useTestimonialData() {
 
         // Check if data is valid
         if (data && data.length > 0) {
-            setTestimonial({ id: data[0].id, img_url: data[0].img_url, message: data[0].message, created_at: data[0].date });
+            setTestimonials(data); // Store all testimonials
         } else {
-            setError('No testimonial data found');
+            setError("No testimonials found");
         }
 
         setLoading(false); // Set loading to false after data is fetched
     }
 
-    return { testimonial, loading, error };
+    return { testimonials, loading, error };
 }
