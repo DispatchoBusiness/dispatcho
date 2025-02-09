@@ -8,7 +8,7 @@ export default function About() {
 
     return (
         <>
-            <Banner />
+            <Banner bgImage="url('/img/testimonials/default.png')" />
             <Contact />
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                 <div className="w-full">

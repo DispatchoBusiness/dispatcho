@@ -8,7 +8,7 @@ export default function Login() {
     var currentDate = new Date();
     return (
         <>
-            <Banner />
+            <Banner bgImage="url('/img/banners/pricing_banner.png')" />
             <Contact />
             <main>
                 <div className="flex gap-4 justify-center pt-12 pb-8">
