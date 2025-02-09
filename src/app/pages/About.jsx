@@ -17,7 +17,7 @@ export default function About() {
                     </div>
                     <div className="px-40 pt-8 pb-8">
                         <div className="flex items-center">
-                            <div className="mr-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, diam nec maximus suscipit, urna diam tempus dolor, in facilisis libero lorem non lorem. Ut facilisis lobortis commodo. Aliquam sodales sapien a neque dignissim tincidunt. </div>
+                            <div className="mr-12"> We are a small team, making a simple, easy to use yet versatile and powerful software solution for those who need tool for their business daily need, whether you are a small business owner or intermediate size company. Our goal is to provide a user friendly application for your operation. </div>
                             <button className="ml-8">text</button>
                         </div>
                     </div>
