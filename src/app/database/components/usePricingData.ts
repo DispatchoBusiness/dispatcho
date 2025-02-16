@@ -8,6 +8,7 @@ type Pricing = {
     title: string;
     description: string;
     price: number;
+    price2: string;
     created_at: Date;
 };
 
