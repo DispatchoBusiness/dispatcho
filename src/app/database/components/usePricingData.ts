@@ -7,6 +7,12 @@ type Pricing = {
     id: number;
     title: string;
     description: string;
+    description_line_2: string;
+    description_line_3: string; 
+    description_line_4: string;
+    description_line_5: string;
+    description_line_6: string;
+    description_line_7: string;
     price: number;
     price2: string;
     created_at: Date;
