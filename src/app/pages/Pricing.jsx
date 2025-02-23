@@ -8,7 +8,7 @@ export default function Price() {
     var currentDate = new Date();
     return (
         <>
-            <Banner />
+            <Banner bgImage="url('/img/banners/pricingbanner.png')" title="text4" description="text4" />
             <Contact />
             <main>
                 <div className="flex gap-4 justify-center pt-12 pb-8">

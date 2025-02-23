@@ -8,7 +8,7 @@ export default function Home() {
 
     return (
         <>
-            <Banner />
+            <Banner bgImage="url('/img/banners/homebanner.png')" title="text2" description="text2" />
             <Contact />
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                 <div className="w-full">
