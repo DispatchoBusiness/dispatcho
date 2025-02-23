@@ -9,8 +9,8 @@ export default function NewsLetter() {
 
     return (
         <div className="w-full">
-            <div className="px-40 py-8">
-                <div className="flex gap-4 py-8 px-8 custom-dashed-border">
+            <div className="px-0 md:px-40 py-8">
+                <div className="flex gap-4 py-8 px-8 custom-dashed-border" style={{ padding: '20px' }}>
                     <div className="w-full">
                         <h2>Subscribe to our Newsletter</h2>
                         <form onSubmit={handleSubmit} className="flex items-center gap-4">

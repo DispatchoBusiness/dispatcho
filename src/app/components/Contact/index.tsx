@@ -29,16 +29,17 @@ const Contact = ({ email, phone }: ContactProps) => {
         const { email, phone } = contact;
         return (
             <div className="flex justify-center items-center p-8">
-                <div className="flex space-x-12"> {/* Vertical space between fields */}
-                    <div className="flex flex-col items-center border-r-2 border-white pr-12">
-                        <p className="text-lg font-semibold">{Uppercase("Email")}</p>
-                        <p className="text-lg">{email}</p>
+                <div className="flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0">
+                    <div className="flex flex-col items-center border-white">
+                        <p className="text-m font-semibold">{Uppercase("Email")}</p>
+                        <p className="text-m">{email}</p>
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <p className="text-lg font-semibold">{Uppercase("Phone")}</p>
-                        <p className="text-lg">{phone}</p>
+                        <p className="text-m font-semibold">{Uppercase("Phone")}</p>
+                        <p className="text-m">{phone}</p>
                     </div>
+
                 </div>
             </div>
         );

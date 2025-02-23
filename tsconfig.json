@@ -38,7 +38,7 @@
     "src/app/pages/Home.jsx",
     "src/app/pages/About.jsx",
     "tailwind.config.ts"
-  ],
+, "src/app/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
