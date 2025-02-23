@@ -20,7 +20,9 @@ export default function Pricing() {
                         <p className="text-lg text-center">{item.description_line_5}</p>
                         <p className="text-lg text-center">{item.description_line_6}</p>
                         <p className="text-lg text-center">{item.description_line_7}</p>
-                        <p className="text-xl font-bold text-center">${item.price}</p>
+                        {
+                            item.price ? <p className="text-xl font-bold text-center">${item.price}</p> : null
+                        }
                         <p className="text-xl font-bold text-center">{item.price2}</p>
                         <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded w-full">Buy</button>
                     </div>
