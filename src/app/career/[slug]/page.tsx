@@ -1,8 +1,10 @@
+"use client"
 import { notFound } from 'next/navigation';
 import styles from './Default.module.css';
 import Banner from '@/app/components/Banner';
 import Contact from '@/app/components/Contact';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 // Mock data - should match your listing data
 const jobDetails = {
@@ -22,7 +24,8 @@ const jobDetails = {
     }
 };
 
-export default function JobDetailPage({ params }: { params: { slug: string } }) {
+export default function JobDetailPage() {
+    const params = useParams();
     const job = jobDetails[params.slug as keyof typeof jobDetails];
 
     if (!job) {
