@@ -1,0 +1,7 @@
+.textColor {
+    color: var(--blackTextColor);
+}
+
+.barColor {
+    color: var(--dark-green);
+}

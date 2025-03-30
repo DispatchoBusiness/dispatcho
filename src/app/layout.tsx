@@ -15,7 +15,6 @@ export default function RootLayout({ children }: { children: any }) { // Simple 
     <html lang="en">
       <body>
         <PreHeader />
-        <Header />
         <main className="flex-grow">
           {children} {/* This will render your current page */}
         </main>

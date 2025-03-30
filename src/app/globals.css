@@ -6,8 +6,9 @@
 :root {
   --background: #ffffff;
   --scrollbarBackground: #363636;
-  --scrollbar: #141414;
-  --preHeader: #141414;
+  --blackTextColor: #000000;
+  --scrollbar: #000000;
+  --preHeader: #000000;
   --preHeaderText: #ffffff;
   --footer: #232323;
   --postFooter: #141414;
@@ -18,7 +19,7 @@
   --dark-green: rgb(9, 65, 9);
   --dark-green-transparent-50: rgba(0, 128, 0, 0.5);
   --dark-green-transparent-25: rgba(0, 128, 0, 0.25);
-  --green: rgb(66, 175, 66);
+  --green: rgb(25, 87, 25);
   --light-green: rgb(225, 252, 225);
   /* Base font size */
   --font-size-sm: 14px;
@@ -63,7 +64,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #141414;
+    --background: #ffffff;
     --foreground: #ededed;
     --postFooter: #141414;
   }
@@ -100,10 +101,17 @@ form {
 }
 
 button {
-  width: 100px;
+  padding: 0 1.5rem;
+  /* Horizontal padding only */
   height: 40px;
+  min-width: 100px;
+  /* Minimum width */
+  width: auto;
+  /* Allows expansion */
   border-radius: 5px;
   background-color: var(--green);
+  white-space: nowrap;
+  /* Prevents text wrapping */
 }
 
 input {

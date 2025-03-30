@@ -8,9 +8,9 @@ export const jobListings = [
     },
     {
         id: 2,
-        title: "WordPress Developer",
+        title: "Next.js Developer",
         type: "Full-time",
-        description: "Develop and maintain WordPress websites",
+        description: "Develop and maintain the Nextjs website",
         slug: "nextjs-developer" // Changed from detailsPath to slug
     }
 ];

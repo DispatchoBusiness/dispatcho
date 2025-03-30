@@ -1,0 +1,8 @@
+.textColor {
+    color: var(--blackTextColor);
+}
+
+.titleStyle {
+    color: var(--dark-green);
+    font-weight: 700;
+}

@@ -4,7 +4,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Next.js alternative to useLocation
 
-export default function Header() {
+interface HeaderProps {
+    colorToPass: string;
+}
+
+export default function Header({ colorToPass }: HeaderProps) {
     const pathname = usePathname();  // Next.js way to get current path
     const isActive = (path: string) => pathname === path;
     const [isOpen, setIsOpen] = useState(false);
@@ -34,12 +38,14 @@ export default function Header() {
                     <ul className="flex flex-col items-start md:flex-row md:items-center md:gap-4 md:justify-end">
                         <li>
                             <Link
-                                href="/" // Changed from 'to' to 'href'
-                                className={
-                                    isActive("/")
-                                        ? "text-green-500 font-bold"
-                                        : "text-green-800"
-                                }
+                                href="/"
+                                className={`
+                                    ${colorToPass}
+                                    ${isActive("/") ?
+                                        "relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-white after:content-['']"
+                                        : ""
+                                    }
+                                `}
                             >
                                 Home
                             </Link>
@@ -47,11 +53,13 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/about" // Changed from 'to' to 'href'
-                                className={
-                                    isActive("/about")
-                                        ? "text-green-500 font-bold"
-                                        : "text-green-800"
-                                }
+                                className={`
+                                    ${colorToPass}
+                                    ${isActive("/about") ?
+                                        "relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-white after:content-['']"
+                                        : ""
+                                    }
+                                `}
                             >
                                 About
                             </Link>
@@ -59,11 +67,13 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/pricing" // Changed from 'to' to 'href'
-                                className={
-                                    isActive("/pricing")
-                                        ? "text-green-500 font-bold"
-                                        : "text-green-800"
-                                }
+                                className={`
+                                    ${colorToPass}
+                                    ${isActive("/pricing") ?
+                                        "relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-white after:content-['']"
+                                        : ""
+                                    }
+                                `}
                             >
                                 Pricing
                             </Link>
@@ -71,11 +81,13 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/login" // Changed from 'to' to 'href'
-                                className={
-                                    isActive("/login")
-                                        ? "text-green-500 font-bold"
-                                        : "text-green-800"
-                                }
+                                className={`
+                                    ${colorToPass}
+                                    ${isActive("/login") ?
+                                        "relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-white after:content-['']"
+                                        : ""
+                                    }
+                                `}
                             >
                                 Login
                             </Link>

@@ -2,95 +2,75 @@
 
 import useTestimonialData from "../../database/components/useTestimonialData";
 import React, { useEffect, useState } from "react";
+import styles from './Testimonial.module.css'
 
-// Define types for the props
 type TestimonialDataProps = {
   img_url: string;
   message: string;
+  name?: string;
+  role?: string;
 };
 
-// The Testimonial component
 const Testimonial = () => {
   const { testimonials, loading, error } = useTestimonialData();
-  const [index, setIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Auto-rotate testimonials
   useEffect(() => {
-    if (testimonials) {
-      console.log(testimonials);
-    }
-  }, [testimonials]);
-
-  // Auto scroll testimonials
-  useEffect(() => {
-    if (testimonials && Array.isArray(testimonials)) {
+    if (testimonials?.length > 1) {
       const interval = setInterval(() => {
-        setIndex((prevIndex) =>
-          prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+        setCurrentIndex((prev) =>
+          prev === testimonials.length - 1 ? 0 : prev + 1
         );
-      }, 5000); // Change testimonial every 5 seconds
-
+      }, 5000);
       return () => clearInterval(interval);
     }
   }, [testimonials]);
 
-  // Handle loading state
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  if (loading) return <div className="text-center py-12">Loading testimonials...</div>;
+  if (error) return <div className="text-center py-12 text-red-500">Error: {error}</div>;
+  if (!testimonials?.length) return <div className="text-center py-12">No testimonials available</div>;
 
-  // Handle error state
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!testimonials) {
-    return <div>No testimonial data found.</div>;
-  }
-
-  // Ensure testimonials is always treated as an array
-  const testimonialArray = Array.isArray(testimonials) ? testimonials : [testimonials];
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className="w-full flex justify-center bg-gray-500 pt-8 pb-8">
-      <div className="relative w-[400px] h-[300px] flex justify-center items-center overflow-hidden">
-        {testimonialArray.map((test, idx) => (
-          <div
-            key={idx}
-            className={`absolute flex flex-col items-center gap-4 p-4 transition-opacity duration-1000 ${idx === index ? "opacity-100" : "opacity-0"
-              }`}
-          >
+    <div className="w-full bg-gray-100 py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-center mb-8">What Our Clients Say</h2>
+
+        <div className="bg-white rounded-lg shadow-md p-8 flex flex-col md:flex-row items-center gap-8">
+          {/* Testimonial Image */}
+          <div className="flex-shrink-0">
             <img
-              src={test.img_url}
-              alt="Testimonial"
-              width={80}
-              height={80}
-              className="rounded-full"
+              src={currentTestimonial.img_url}
+              alt={"Client"}
+              width={120}
+              height={120}
+              className="rounded-full object-cover aspect-square"
             />
-            <div className="text-white text-center">{test.message}</div>
           </div>
-        ))}
-      </div>
-      <div className="w-full">
-        <div className="flex gap-4 bg-gray-500 justify-center pt-8 pb-8">
-          <div className="relative overflow-hidden w-full px-0 md:px-40">
-            <div
-              className="flex transition-all duration-1000 ease-in-out"
-              style={{ transform: `translateX(-${index * 100}%)` }}
-            >
-              {testimonialArray.map((test, idx) => (
-                <div className="w-full flex justify-center gap-4 p-4" key={idx}>
-                  <img
-                    src={test.img_url}
-                    alt="Testimonial"
-                    width={40}
-                    className="rounded-full"
-                  />
-                  <div className="text-white">{test.message}</div>
-                </div>
-              ))}
-            </div>
+
+          {/* Testimonial Content */}
+          <div className="text-center md:text-left">
+            <blockquote className="text-lg italic text-gray-700 mb-4">
+              "{currentTestimonial.message}"
+            </blockquote>
           </div>
         </div>
+
+        {/* Navigation Dots */}
+        {testimonials.length > 1 && (
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-3 h-3 rounded-full transition-colors ${idx === currentIndex ? `${styles.barColor}` : 'bg-gray-300'}`}
+                aria-label={`View testimonial ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

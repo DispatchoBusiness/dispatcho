@@ -2,13 +2,14 @@ import Banner from "../components/Banner"
 import Contact from "../components/Contact"
 import Testimonial from "../components/Testimonial"
 import NewsLetter from "../components/NewsLetter"
+import styles from './About.module.css'
 
 export default function About() {
     var currentDate = new Date();
 
     return (
         <>
-            <Banner bgImage="url('/img/banners/aboutbanner.png')" title="text1" description="text1" />
+            <Banner bgImage="url('/img/banners/aboutbanner.png')" title="What are the costs?" description="Read more about our costs" onClick="View Prices" isDark={true} />
             <Contact />
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                 <div className="w-full">
@@ -17,7 +18,7 @@ export default function About() {
                     </div>
                     <div className="px-40 pt-8 pb-8">
                         <div className="flex items-center">
-                            <div className="mr-12"> We are a small team, making a simple, easy to use yet versatile and powerful software solution for those who need tool for their business daily need, whether you are a small business owner or intermediate size company. Our goal is to provide a user friendly application for your operation. </div>
+                            <div className={`mr-12 ${styles.textColor}`}> We are a small team, making a simple, easy to use yet versatile and powerful software solution for those who need tool for their business daily need, whether you are a small business owner or intermediate size company. Our goal is to provide a user friendly application for your operation. </div>
                             <button className="ml-8">text</button>
                         </div>
                     </div>
