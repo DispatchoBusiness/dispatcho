@@ -1,6 +1,10 @@
-import Link from 'next/link';
+import { Link, useLocation } from 'react-router-dom';
+
 
 export default function Footer() {
+    const location = useLocation();  // Get the current location (URL path)
+
+
     return (
         <div className="w-full">
             <footer style={{ backgroundColor: 'var(--footer)', color: 'var(--footerText)' }}>
@@ -8,7 +12,7 @@ export default function Footer() {
                     <li className="pb-4">Home</li>
                     <li className="pb-4">About</li>
                     <li className="pb-4">
-                        <Link href="/pages/career">Career</Link>
+                        <Link to="/career">Career</Link>
                     </li>
                     <li>Pricing</li>
                 </ul>
