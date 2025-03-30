@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 export default function JobDetail() {
   const { id } = useParams();
@@ -49,7 +48,7 @@ export default function JobDetail() {
         {/* Main content - 2/3 width on desktop */}
         <div className="md:col-span-2">
           <h1 className="text-purple-800 text-2xl font-medium mb-4">{jobDetail.title}</h1>
-          
+
           <div className="mb-8">
             <h2 className="text-lg font-medium mb-3">Description</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -60,7 +59,7 @@ export default function JobDetail() {
               ))}
             </ul>
           </div>
-          
+
           <div className="mb-8">
             <h2 className="text-lg font-medium mb-3">Responsibilities</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -71,7 +70,7 @@ export default function JobDetail() {
               ))}
             </ul>
           </div>
-          
+
           <div className="mb-8">
             <h2 className="text-lg font-medium mb-3">Qualifications</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -82,7 +81,7 @@ export default function JobDetail() {
               ))}
             </ul>
           </div>
-          
+
           <div className="mb-8">
             <h2 className="text-lg font-medium mb-3">Job Benefits</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -93,7 +92,7 @@ export default function JobDetail() {
               ))}
             </ul>
           </div>
-          
+
           <div className="mb-8">
             <h2 className="text-lg font-medium mb-3">Contacts</h2>
             <p className="text-gray-700">
@@ -104,7 +103,7 @@ export default function JobDetail() {
             </p>
           </div>
         </div>
-        
+
         {/* Sidebar - 1/3 width on desktop */}
         <div className="bg-gray-50 p-6 rounded">
           <div className="mb-6">
@@ -119,48 +118,48 @@ export default function JobDetail() {
               <span>{jobDetail.hiringOrg}</span>
             </div>
           </div>
-          
+
           <div className="space-y-4">
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Employment Type</h3>
               <p className="text-blue-600 font-medium">{jobDetail.employmentType}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Beginning of employment</h3>
               <p>{jobDetail.startDate}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Duration of employment</h3>
               <p>{jobDetail.duration}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Industry</h3>
               <p>{jobDetail.industry}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Job Location</h3>
               <p>{jobDetail.location}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Working Hours</h3>
               <p>{jobDetail.workingHours}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">Date posted</h3>
               <p>{jobDetail.datePosted}</p>
             </div>
-            
+
             <div>
               <h3 className="text-orange-600 font-medium mb-1">PDF Export</h3>
               <p className="text-blue-600 underline cursor-pointer">Export as PDF</p>
             </div>
-            
+
             <button className="w-full bg-blue-400 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded mt-4">
               APPLY NOW!
             </button>

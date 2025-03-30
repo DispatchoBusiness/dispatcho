@@ -37,7 +37,7 @@ export default function JobDetailPage({ params }: { params: { slug: string } }) 
                 <div className="max-w-4xl mx-auto px-4 py-12">
                     <Link
                         href="/career"
-                        className="flex items-center text-blue-500 hover:text-blue-700 mb-6 transition-colors"
+                        className={`flex items-center mb-6 transition-colors ${styles.textColor}`}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function JobDetailPage({ params }: { params: { slug: string } }) 
                             ))}
                         </ul>
 
-                        <button className="mt-8 bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-full transition-colors">
+                        <button className={`mt-8 text-white font-medium py-3 px-8 rounded-full transition-colors`}>
                             Apply Now
                         </button>
                     </div>
