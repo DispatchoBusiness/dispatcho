@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { notFound } from 'next/navigation';
@@ -85,7 +86,12 @@ export default function JobDetailPage({ params }: { params: { slug: string } }) 
                                 <li key={index} className="mb-2">{item}</li>
                             ))}
                         </ul>
-                        <ApplyButton />
+                        <Link
+                            href={`/apply?position=${encodeURIComponent(job.title)}`}
+                            className="mt-8 inline-block text-white font-medium py-3 px-8 rounded-full"
+                        >
+                            Apply Now
+                        </Link>
                     </div>
                 </div>
             </div>
