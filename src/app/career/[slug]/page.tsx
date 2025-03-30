@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { notFound } from 'next/navigation';
@@ -7,6 +5,7 @@ import styles from './Default.module.css';
 import Banner from '@/app/components/Banner';
 import Contact from '@/app/components/Contact';
 import Link from 'next/link';
+import ApplyButton from "@/app/components/ApplyButton";
 
 interface Job {
     title: string;
@@ -34,21 +33,13 @@ const jobDetails: Record<string, Job> = {
     }
 };
 
-export default function JobDetailPage() {
-    const params = useParams();
-    const [job, setJob] = useState<Job | null>(null);
+export default function JobDetailPage({ params }: { params: { slug: string } }) {
+    const job = jobDetails[params.slug];
 
-    useEffect(() => {
-        if (params?.slug) {
-            const foundJob = jobDetails[params.slug as string];
-            if (!foundJob) {
-                notFound();
-            }
-            setJob(foundJob);
-        }
-    }, [params]);
+    if (!job) {
+        return notFound();
+    }
 
-    if (!job) return <div>Loading...</div>;
 
     return (
         <>
@@ -94,10 +85,7 @@ export default function JobDetailPage() {
                                 <li key={index} className="mb-2">{item}</li>
                             ))}
                         </ul>
-
-                        <button className={`mt-8 text-white font-medium py-3 px-8 rounded-full transition-colors`}>
-                            Apply Now
-                        </button>
+                        <ApplyButton />
                     </div>
                 </div>
             </div>
