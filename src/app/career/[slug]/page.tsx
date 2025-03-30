@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { notFound } from 'next/navigation';
 import styles from './Default.module.css';
 import Banner from '@/app/components/Banner';
@@ -23,6 +24,12 @@ const jobDetails = {
         requirements: ["Item 1", "Item 2", "Item 3"]
     }
 };
+
+interface JobDetailPageProps {
+    params: {
+        slug: string;
+    };
+}
 
 export default function JobDetailPage() {
     const params = useParams();
