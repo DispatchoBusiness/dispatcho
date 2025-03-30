@@ -1,6 +1,6 @@
 "use client"
-import Header from "../Header";
 import styles from './Banner.module.css';
+import dynamic from 'next/dynamic';
 
 interface BannerProps {
     bgImage: string;
@@ -9,6 +9,12 @@ interface BannerProps {
     onClick: string;
     isDark: boolean;
 }
+
+// Dynamically import Header with SSR disabled
+const Header = dynamic(() => import('../Header'), {
+    ssr: false,
+    loading: () => <div>Loading header...</div> // Optional loading component
+});
 
 export default function Banner({ bgImage, title, description, onClick, isDark }: BannerProps) {
     var colorToUse = isDark ? styles.textColorLight : styles.textColorDark;
