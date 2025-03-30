@@ -1,24 +1,7 @@
 "use client";
-import { useState } from 'react';
-import Link from 'next/link';
 
-// Mock data for job listings
-const jobListings = [
-  {
-    id: 1,
-    title: "Technical Product Manager",
-    type: "Full-time",
-    description: "Lead product development for technical products",
-    detailsPath: "/career/technical-product-manager"
-  },
-  {
-    id: 2,
-    title: "WordPress Developer",
-    type: "Full-time",
-    description: "Develop and maintain WordPress websites",
-    detailsPath: "/career/wordpress-developer"
-  }
-];
+import Link from 'next/link';
+import { jobListings } from '@/app/data/jobs';
 
 // Company information
 const companyInfo = {
@@ -60,10 +43,15 @@ export default function Career() {
                 <div>
                   <h2 className="text-xl font-semibold">{job.title}</h2>
                   <p className="text-gray-600">{job.type}</p>
+                  {/* Added brief description */}
+                  <p className="text-gray-500 mt-2">{job.description}</p>
                 </div>
-                <Link href={job.detailsPath}>
-                  <button className="mt-4 md:mt-0 bg-blue-400 hover:bg-blue-500 text-white font-medium py-2 px-8 rounded-full transition-colors">
-                    APPLY NOW!
+                <Link
+                  href={`/career/${job.slug}`} // Dynamic path construction
+                  className="mt-4 md:mt-0"
+                >
+                  <button className="bg-blue-400 hover:bg-blue-500 text-white font-medium py-2 px-8 rounded-full transition-colors">
+                    VIEW DETAILS
                   </button>
                 </Link>
               </div>
