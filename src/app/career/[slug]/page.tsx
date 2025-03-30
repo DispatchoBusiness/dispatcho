@@ -25,12 +25,6 @@ const jobDetails = {
     }
 };
 
-interface JobDetailPageProps {
-    params: {
-        slug: string;
-    };
-}
-
 export default function JobDetailPage() {
     const params = useParams();
     const job = jobDetails[params.slug as keyof typeof jobDetails];
