@@ -1,8 +1,10 @@
-import Testimonial from "../components/Testimonial"
-import Banner from "../components/Banner"
+import Testimonial from "./components/Testimonial"
+import Banner from "./components/Banner"
 import NewsLetter
-    from "../components/NewsLetter"
-import Contact from "../components/Contact";
+    from "./components/NewsLetter"
+import Contact from "./components/Contact";
+
+// This replaces your <Home /> component
 export default function Home() {
     var currentDate = new Date();
 
@@ -22,7 +24,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <Testimonial image_link="test" message="test" created_at={currentDate} />
+                <Testimonial />
                 <NewsLetter />
             </main>
         </>

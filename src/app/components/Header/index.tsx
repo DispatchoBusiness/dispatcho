@@ -1,25 +1,18 @@
 "use client";
 
-import { Link, useLocation } from 'react-router-dom';
-import React from "react";
-import { useState } from 'react';
+import React, { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Next.js alternative to useLocation
 
-// The Contact component receives props and renders them
 export default function Header() {
-    const location = useLocation();  // Get the current location (URL path)
-    const isActive = (path: string) => location.pathname === path;
+    const pathname = usePathname();  // Next.js way to get current path
+    const isActive = (path: string) => pathname === path;
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="px-10 relative flex justify-between items-center">
-            {/* Left side: Image area */}
-            <div
-                className="flex-1 bg-cover bg-center h-32"
-                style={{ backgroundImage: "url('your-image-url-here.jpg')" }}
-            >
-                {/* Optional image */}
-                {/* <img src="your-image-url-here.jpg" alt="Banner" className="w-full h-full object-cover" /> */}
-            </div>
+            {/* Indenting */}
+            <div className="flex-1 bg-cover bg-center h-32"></div>
 
             {/* Right side: Links */}
             <div className="relative">
@@ -41,7 +34,7 @@ export default function Header() {
                     <ul className="flex flex-col items-start md:flex-row md:items-center md:gap-4 md:justify-end">
                         <li>
                             <Link
-                                to="/"
+                                href="/" // Changed from 'to' to 'href'
                                 className={
                                     isActive("/")
                                         ? "text-green-500 font-bold"
@@ -53,7 +46,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                to="/about"
+                                href="/about" // Changed from 'to' to 'href'
                                 className={
                                     isActive("/about")
                                         ? "text-green-500 font-bold"
@@ -65,7 +58,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                to="/pricing"
+                                href="/pricing" // Changed from 'to' to 'href'
                                 className={
                                     isActive("/pricing")
                                         ? "text-green-500 font-bold"
@@ -77,7 +70,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                to="/login"
+                                href="/login" // Changed from 'to' to 'href'
                                 className={
                                     isActive("/login")
                                         ? "text-green-500 font-bold"
@@ -92,4 +85,4 @@ export default function Header() {
             </div>
         </div>
     );
-};
+}

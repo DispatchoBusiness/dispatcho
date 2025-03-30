@@ -3,14 +3,8 @@ import Uppercase from '../../utils/uppercase';
 import useContactData from '../../database/components/useContactData';
 import React from "react";
 
-// Define types for the props
-type ContactProps = {
-    email: string;
-    phone: string;
-};
-
 // The Contact component receives props and renders them
-const Contact = ({ email, phone }: ContactProps) => {
+const Contact = () => {
 
     const { contact, loading, error } = useContactData();
 

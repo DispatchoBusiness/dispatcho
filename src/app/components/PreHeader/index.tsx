@@ -5,14 +5,8 @@ import React from "react";
 import { FaLinkedin, FaFacebookSquare, FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
 
 
-// Define types for the props
-type PreBannerProps = {
-  message: string;
-  created_at: Date;
-};
-
 // The Contact component receives props and renders them
-const PreBanner = ({ message }: PreBannerProps) => {
+const PreHeader = () => {
 
   const { preBanner, loading, error } = usePreBannerData();
 
@@ -45,4 +39,4 @@ const PreBanner = ({ message }: PreBannerProps) => {
   return <div>No pre-banner data found.</div>;
 };
 
-export default PreBanner;
+export default PreHeader;

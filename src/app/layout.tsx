@@ -1,22 +1,27 @@
-import "./globals.css";
-import PreHeader from "./components/PreHeader";
-import Footer from "./components/Footer";
-import Banner from "./components/Header";
-import PostFooter from "./components/PostFooter";
-import Contact from "./components/Contact";
+// app/layout.tsx
+import type { Metadata } from 'next';
+import './globals.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import PreHeader from './components/PreHeader';
+import PostFooter from './components/PostFooter';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const metadata: Metadata = {
+  title: 'My App',
+};
+
+export default function RootLayout({ children }: { children: any }) { // Simple 'any' type
   return (
-    <>
-      <PreHeader message="" created_at={new Date()} />
-      {children}
-      <Contact email="example@example.com" phone="123-456-7890" />
-      <Footer />
-      <PostFooter />
-    </>
+    <html lang="en">
+      <body>
+        <PreHeader />
+        <Header />
+        <main className="flex-grow">
+          {children} {/* This will render your current page */}
+        </main>
+        <Footer />
+        <PostFooter />
+      </body>
+    </html>
   );
 }
