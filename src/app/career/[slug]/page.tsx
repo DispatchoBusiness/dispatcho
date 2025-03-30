@@ -1,14 +1,23 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { notFound } from 'next/navigation';
 import styles from './Default.module.css';
 import Banner from '@/app/components/Banner';
 import Contact from '@/app/components/Contact';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+
+interface Job {
+    title: string;
+    type: string;
+    description: string;
+    responsibilities: string[]; // Explicit string array type
+    requirements: string[];     // Explicit string array type
+}
 
 // Mock data - should match your listing data
-const jobDetails = {
+const jobDetails: Record<string, Job> = {
     "technical-product-manager": {
         title: "Technical Product Manager",
         type: "Full-time",
@@ -27,11 +36,19 @@ const jobDetails = {
 
 export default function JobDetailPage() {
     const params = useParams();
-    const job = jobDetails[params.slug as keyof typeof jobDetails];
+    const [job, setJob] = useState<Job | null>(null);
 
-    if (!job) {
-        return notFound();
-    }
+    useEffect(() => {
+        if (params?.slug) {
+            const foundJob = jobDetails[params.slug as string];
+            if (!foundJob) {
+                notFound();
+            }
+            setJob(foundJob);
+        }
+    }, [params]);
+
+    if (!job) return <div>Loading...</div>;
 
     return (
         <>
@@ -66,14 +83,14 @@ export default function JobDetailPage() {
 
                         <h3 className={`text-xl font-medium mb-3 ${styles.textColor}`}>Responsibilities</h3>
                         <ul className={`list-disc pl-5 mb-6 ${styles.textColor}`}>
-                            {job.responsibilities.map((item, index) => (
+                            {job.responsibilities.map((item: string, index: number) => (
                                 <li key={index} className="mb-2">{item}</li>
                             ))}
                         </ul>
 
                         <h3 className={`text-xl font-medium mb-3 ${styles.textColor}`}>Requirements</h3>
                         <ul className={`list-disc pl-5 ${styles.textColor}`}>
-                            {job.requirements.map((item, index) => (
+                            {job.requirements.map((item: string, index: number) => (
                                 <li key={index} className="mb-2">{item}</li>
                             ))}
                         </ul>
