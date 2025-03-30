@@ -1,3 +1,4 @@
+"use client"
 import Header from "../Header";
 import styles from './Banner.module.css';
 
