@@ -1,0 +1,7 @@
+.textColorLight {
+    color: var(--light-green);
+}
+
+.textColorDark {
+    color: var(--dark-green);
+}

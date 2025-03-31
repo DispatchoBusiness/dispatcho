@@ -2,15 +2,10 @@
 import Uppercase from '../../utils/uppercase';
 import useContactData from '../../database/components/useContactData';
 import React from "react";
-
-// Define types for the props
-type ContactProps = {
-    email: string;
-    phone: string;
-};
+import styles from './Contact.module.css';
 
 // The Contact component receives props and renders them
-const Contact = ({ email, phone }: ContactProps) => {
+export default function Contact() {
 
     const { contact, loading, error } = useContactData();
 
@@ -31,13 +26,13 @@ const Contact = ({ email, phone }: ContactProps) => {
             <div className="flex justify-center items-center p-8">
                 <div className="flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0">
                     <div className="flex flex-col items-center border-white">
-                        <p className="text-m font-semibold">{Uppercase("Email")}</p>
-                        <p className="text-m">{email}</p>
+                        <p className={`text-m font-semibold ${styles.textColor}`}>{Uppercase("Email")}</p>
+                        <p className={`text-m  ${styles.textColor}`}>{email}</p>
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <p className="text-m font-semibold">{Uppercase("Phone")}</p>
-                        <p className="text-m">{phone}</p>
+                        <p className={`text-m font-semibold ${styles.textColor}`}>{Uppercase("Phone")}</p>
+                        <p className={`text-m ${styles.textColor}`}>{phone}</p>
                     </div>
 
                 </div>
@@ -47,5 +42,3 @@ const Contact = ({ email, phone }: ContactProps) => {
 
     return <div>No contact data found.</div>;
 };
-
-export default Contact;
