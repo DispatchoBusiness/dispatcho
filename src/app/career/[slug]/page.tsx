@@ -1,8 +1,6 @@
 "use client"
 import { notFound, useParams } from 'next/navigation';
 import styles from './Default.module.css';
-import Banner from '@/app/components/Banner';
-import Contact from '@/app/components/Contact';
 import Link from 'next/link';
 
 interface Job {
@@ -34,15 +32,11 @@ const jobDetails: Record<string, Job> = {
 export default function JobDetailPage() {
     const params = useParams<{ slug: string }>();
 
-    // Type-safe slug extraction
-    const slug = params?.slug;
-
-    if (!slug) {
-        return <div>Loading...</div>; // Or your custom loading state
+    if (!params?.slug) {
+        return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
     }
 
-    // Type-safe job lookup
-    const job = jobDetails[slug];
+    const job = jobDetails[params.slug];
 
     if (!job) {
         notFound();
