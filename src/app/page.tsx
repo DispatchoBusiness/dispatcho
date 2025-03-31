@@ -11,7 +11,7 @@ export default function Home() {
 
     return (
         <>
-            <Banner bgImage="url('/img/banners/homebanner.png')" title="For all your delivery needs!" description="Dispatcho is here to help with your delivery needs" onClick="See Prices" />
+            <Banner bgImage="url('/img/banners/homebanner.png')" title="For all your delivery needs!" description="Dispatcho is here to help with your delivery needs" onClick="See Prices" isDark={false} />
             <Contact />
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                 <div className="w-full">
