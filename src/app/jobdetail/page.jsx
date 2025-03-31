@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 export default function JobDetail() {
   const { id } = useParams();
   // In a real implementation, you would fetch the job details based on the id parameter
