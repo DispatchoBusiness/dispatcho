@@ -1,5 +1,4 @@
 export default function JobDetail() {
-  const { id } = useParams();
   // In a real implementation, you would fetch the job details based on the id parameter
   // This is mock data for demonstration
   const jobDetail = {
